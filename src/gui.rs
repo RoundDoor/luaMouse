@@ -1,6 +1,7 @@
 use egui::{CentralPanel, Context, Layout, TextEdit, Button, Align};
 use egui_extras::syntax_highlighting::{highlight, CodeTheme};
 
+/// Struct representing the Lua code editor state.
 pub struct LuaEditor {
     pub code: String,
 }
@@ -12,12 +13,20 @@ impl Default for LuaEditor {
         }
     }
 }
+
 impl LuaEditor {
+    /// Updates the code in the editor.
     pub fn update_code(&mut self, code: &str) {
         self.code = code.to_owned();
     }
 }
 
+/// Shows the Lua code editor GUI, result display, and execute button.
+///
+/// - Displays a syntax-highlighted, non-editable box with available Lua functions.
+/// - Provides a scrollable, fixed-height code editor with syntax highlighting.
+/// - Shows result or error messages at the bottom.
+/// - Calls `on_execute` when the Execute button is pressed.
 pub fn show_lua_editor(
     ctx: &Context,
     editor: &mut LuaEditor,
@@ -63,7 +72,7 @@ pub fn show_lua_editor(
                 );
             });
 
-         // Show result message at the top
+         // Show result message at the bottom
         if !result_message.is_empty() {
             ui.label(result_message.as_str());
             ui.add_space(8.0);

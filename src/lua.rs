@@ -4,7 +4,22 @@ use std::cell::RefCell;
 use enigo::{Enigo};
 use crate::mouse_move;
 
-
+/// Executes the given Lua code string with mouse and sleep functions bound.
+///
+/// This function sets up the Lua environment with the following global functions:
+/// - `mouse_move(x, y)`: Moves the mouse cursor by the given relative x and y offsets (pixels).
+/// - `left_click()`: Performs a left mouse button click.
+/// - `right_click()`: Performs a right mouse button click.
+/// - `sleep(ms)`: Pauses execution for the given number of milliseconds.
+///
+/// # Arguments
+/// * `lua` - Reference to a Lua interpreter instance
+/// * `code` - Lua code to execute
+/// * `enigo` - Shared Enigo instance for mouse control
+///
+/// # Returns
+/// * `Ok(())` if the code executed successfully
+/// * `Err(mlua::Error)` if there was an error during execution
 pub fn execute_lua_code(lua: &Lua, code: &str, enigo: Rc<RefCell<Enigo>>) -> Result<(), mlua::Error> {
     
     // Create a Lua function to move the mouse

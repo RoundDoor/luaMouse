@@ -27,6 +27,7 @@ impl Default for App {
 fn main() {
     let mut app = App::default();
 
+    // Preload the Lua code editor with a simple example
     app.editor.update_code("-- Move the mouse in a square pattern
 local side = 200      -- Length of each side of the square in pixels
 local steps = 50      -- Number of steps per side (smoothness)
