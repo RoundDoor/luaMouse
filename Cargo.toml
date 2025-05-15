@@ -1,0 +1,11 @@
+[package]
+name = "luaMouse"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.31.1"
+egui = "0.31.1"
+egui_extras = { version = "0.31.1", features = ["syntect"] }
+enigo = "0.3.0"
+mlua = { version = "0.10", features = ["lua54", "vendored"] }
