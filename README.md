@@ -1,5 +1,7 @@
 # Lua Mouse App
 
+![screenshot](image.png)
+
 A simple Rust GUI application for running Lua scripts to control the mouse using egui/eframe, mlua, and enigo. Includes a code editor with syntax highlighting and mouse scripting functions.
 
 **Tested on Linux. Should also work on macOS and Windows.**
