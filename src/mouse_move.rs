@@ -1,12 +1,7 @@
 // Wrappers for Enigo mouse movement and click functions.
 // All functions use relative movement.
 
-use enigo::{
-    Button,
-    Direction::{Click},
-    Enigo, Mouse,
-    {Coordinate::Rel},
-};
+use enigo::{Button, Coordinate::Rel, Direction::Click, Enigo, Mouse};
 
 /// Moves the mouse cursor by the given relative x and y offsets.
 ///
