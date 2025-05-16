@@ -19,7 +19,7 @@ use enigo::{
 /// ```
 /// move_mouse_wrapper(&mut enigo, 10, 0); // Move mouse 10 pixels to the right
 /// ```
-pub fn move_mouse_wrapper(enigo: &mut Enigo, x: i32, y: i32) {
+pub fn move_mouse(enigo: &mut Enigo, x: i32, y: i32) {
     enigo.move_mouse(x, y, Rel).unwrap();
 }
 

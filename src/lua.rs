@@ -27,7 +27,7 @@ pub fn execute_lua_code(lua: &Lua, code: &str, enigo: Rc<RefCell<Enigo>>) -> Res
     let mouse_move = {
         let enigo = enigo.clone();
         lua.create_function(move |_, (x, y): (i32, i32)| {
-            mouse_move::move_mouse_wrapper(&mut enigo.borrow_mut(), x, y);
+            mouse_move::move_mouse(&mut enigo.borrow_mut(), x, y);
             Ok(())
         })?
     };

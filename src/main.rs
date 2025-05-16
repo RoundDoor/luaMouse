@@ -58,10 +58,11 @@ end
 ");
 
 
-    let mut options = eframe::NativeOptions::default();
-    options.viewport = eframe::egui::ViewportBuilder::default()
+    let options = eframe::NativeOptions {
+    viewport: eframe::egui::ViewportBuilder::default()
         .with_inner_size([800.0, 600.0])
-        .with_resizable(false);
+        .with_resizable(false),
+    ..Default::default()};
     eframe::run_native("Lua Mouse App", options, Box::new(|_cc| Ok(Box::new(app)))).unwrap();
 }
 
